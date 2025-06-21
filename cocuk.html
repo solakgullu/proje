@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kids Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .emoji {
+      font-size: 100px;
+      margin: 20px 0;
+    }
+    .options button {
+      padding: 10px 20px;
+      margin: 8px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #result {
+      font-size: 22px;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f0f8ff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .hidden {
+      display: none;
+    }
+
+    .start-buttons button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🎉 Kids Quiz: Animals, Colors, Family, Fruits, Vehicles</h2>
+
+<div id="start-screen" class="start-buttons">
+  <p>Select a quiz:</p>
+  <button onclick="startQuiz('animal')">🐶 Animals</button>
+  <button onclick="startQuiz('color')">🎨 Colors</button>
+  <button onclick="startQuiz('family')">👨‍👩‍👧‍👦 Family</button>
+  <button onclick="startQuiz('fruit')">🍎 Fruits</button>
+  <button onclick="startQuiz('vehicle')">🚗 Vehicles</button>
+</div>
+
+<div id="quiz-container" class="hidden"></div>
+<div id="feedback"></div>
+<div id="result"></div>
+
+<div id="home-button" class="hidden">
+  <button onclick="goHome()">Ana Sayfaya Dön</button>
+</div>
+<br>
+  <a href="index.html" > Anasayfaya dön</a>
+<script>
+// Questions data (örnek olarak sadece hayvanlar, renkler, aile, meyve ve taşıtlar)
+const animalQuestions = [
+  {emoji:"🐶", answer:"Dog", options:["Dog","Cat","Lion","Rabbit"]},
+  {emoji:"🐱", answer:"Cat", options:["Cat","Dog","Cow","Horse"]},
+  {emoji:"🦁", answer:"Lion", options:["Tiger","Lion","Elephant","Monkey"]},
+  {emoji:"🐰", answer:"Rabbit", options:["Rabbit","Mouse","Dog","Cat"]},
+  {emoji:"🐮", answer:"Cow", options:["Cow","Pig","Horse","Cat"]},
+  {emoji:"🐷", answer:"Pig", options:["Pig","Dog","Rabbit","Lion"]},
+  {emoji:"🐸", answer:"Frog", options:["Frog","Cat","Dog","Horse"]},
+  {emoji:"🐵", answer:"Monkey", options:["Monkey","Dog","Lion","Cow"]},
+  {emoji:"🐔", answer:"Chicken", options:["Chicken","Horse","Dog","Cat"]},
+  {emoji:"🐴", answer:"Horse", options:["Horse","Cat","Rabbit","Pig"]},
+  {emoji:"🐧", answer:"Penguin", options:["Penguin","Dog","Lion","Cow"]},
+  {emoji:"🐦", answer:"Bird", options:["Bird","Dog","Rabbit","Horse"]},
+  {emoji:"🐢", answer:"Turtle", options:["Turtle","Cat","Monkey","Lion"]},
+  {emoji:"🐍", answer:"Snake", options:["Snake","Dog","Cat","Rabbit"]},
+  {emoji:"🐬", answer:"Dolphin", options:["Dolphin","Fish","Bird","Cat"]},
+];
+
+const colorQuestions = [
+  {emoji:"🟥", answer:"Red", options:["Red","Blue","Green","Yellow"]},
+  {emoji:"🟦", answer:"Blue", options:["Yellow","Red","Blue","Green"]},
+  {emoji:"🟩", answer:"Green", options:["Green","Blue","Purple","Orange"]},
+  {emoji:"🟨", answer:"Yellow", options:["Yellow","Brown","Red","Black"]},
+  {emoji:"🟪", answer:"Purple", options:["Purple","Pink","Green","Blue"]},
+  {emoji:"🟫", answer:"Brown", options:["Brown","Orange","Yellow","Red"]},
+  {emoji:"⬛", answer:"Black", options:["Black","White","Gray","Pink"]},
+  {emoji:"⬜", answer:"White", options:["White","Black","Gray","Blue"]},
+  {emoji:"🟧", answer:"Orange", options:["Orange","Yellow","Green","Blue"]},
+  {emoji:"🩷", answer:"Pink", options:["Pink","Purple","Red","Black"]},
+  {emoji:"🩶", answer:"Gray", options:["Gray","Brown","White","Orange"]},
+  {emoji:"🟫", answer:"Brown", options:["Brown","Pink","Red","Green"]},
+  {emoji:"🟪", answer:"Purple", options:["Purple","Yellow","Black","Orange"]},
+  {emoji:"🟩", answer:"Green", options:["Green","Blue","Red","Pink"]},
+  {emoji:"🟦", answer:"Blue", options:["Blue","Orange","Yellow","White"]},
+];
+
+const familyQuestions = [
+  {emoji:"👩", answer:"Mother", options:["Mother","Sister","Aunt","Grandmother"]},
+  {emoji:"👨", answer:"Father", options:["Uncle","Father","Brother","Grandfather"]},
+  {emoji:"👶", answer:"Baby", options:["Baby","Child","Mother","Father"]},
+  {emoji:"👧", answer:"Daughter", options:["Daughter","Mother","Aunt","Sister"]},
+  {emoji:"👦", answer:"Son", options:["Son","Brother","Father","Uncle"]},
+  {emoji:"👵", answer:"Grandmother", options:["Grandmother","Mother","Sister","Aunt"]},
+  {emoji:"👴", answer:"Grandfather", options:["Grandfather","Father","Brother","Son"]},
+  {emoji:"👫", answer:"Couple", options:["Couple","Friends","Siblings","Parents"]},
+  {emoji:"👭", answer:"Sisters", options:["Sisters","Mothers","Aunts","Daughters"]},
+  {emoji:"👬", answer:"Brothers", options:["Brothers","Uncles","Cousins","Friends"]},
+  {emoji:"👩‍👧", answer:"Mother and Daughter", options:["Mother and Daughter","Father and Son","Sister and Brother","Grandma and Grandpa"]},
+  {emoji:"👨‍👦", answer:"Father and Son", options:["Father and Son","Mother and Daughter","Aunt and Uncle","Brother and Sister"]},
+  {emoji:"👩‍👦‍👦", answer:"Mother and Sons", options:["Mother and Sons","Father and Daughters","Grandparents","Cousins"]},
+  {emoji:"👨‍👧‍👧", answer:"Father and Daughters", options:["Father and Daughters","Mother and Sons","Friends","Neighbors"]},
+  {emoji:"👪", answer:"Family", options:["Family","Friends","Classmates","Neighbors"]},
+];
+
+const fruitQuestions = [
+  {emoji:"🍎", answer:"Apple", options:["Apple","Strawberry","Cherry","Pear"]},
+  {emoji:"🍌", answer:"Banana", options:["Banana","Lemon","Mango","Apple"]},
+  {emoji:"🍇", answer:"Grapes", options:["Grapes","Watermelon","Pineapple","Orange"]},
+  {emoji:"🍓", answer:"Strawberry", options:["Strawberry","Banana","Apple","Peach"]},
+  {emoji:"🍍", answer:"Pineapple", options:["Pineapple","Orange","Lemon","Apple"]},
+  {emoji:"🍉", answer:"Watermelon", options:["Watermelon","Pear","Grapes","Banana"]},
+  {emoji:"🍒", answer:"Cherry", options:["Cherry","Peach","Apple","Mango"]},
+  {emoji:"🥭", answer:"Mango", options:["Mango","Pineapple","Banana","Apple"]},
+  {emoji:"🍋", answer:"Lemon", options:["Lemon","Orange","Banana","Peach"]},
+  {emoji:"🍐", answer:"Pear", options:["Pear","Cherry","Grapes","Apple"]},
+  {emoji:"🥝", answer:"Kiwi", options:["Kiwi","Apple","Banana","Orange"]},
+  {emoji:"🍊", answer:"Orange", options:["Orange","Lemon","Pear","Grapes"]},
+  {emoji:"🍈", answer:"Melon", options:["Melon","Watermelon","Cherry","Apple"]},
+  {emoji:"🍑", answer:"Peach", options:["Peach","Strawberry","Apple","Banana"]},
+  {emoji:"🍅", answer:"Tomato", options:["Tomato","Apple","Banana","Cherry"]},
+];
+
+const vehicleQuestions = [
+  {emoji:"🚗", answer:"Car", options:["Car","Bus","Truck","Bike"]},
+  {emoji:"🚌", answer:"Bus", options:["Train","Car","Bus","Plane"]},
+  {emoji:"🚜", answer:"Tractor", options:["Tractor","Bike","Car","Bus"]},
+  {emoji:"🚲", answer:"Bike", options:["Bike","Car","Bus","Truck"]},
+  {emoji:"✈️", answer:"Airplane", options:["Airplane","Helicopter","Car","Boat"]},
+  {emoji:"🚁", answer:"Helicopter", options:["Helicopter","Plane","Car","Bus"]},
+  {emoji:"🚢", answer:"Boat", options:["Boat","Ship","Car","Bus"]},
+  {emoji:"🚤", answer:"Speedboat", options:["Speedboat","Boat","Plane","Car"]},
+  {emoji:"🚛", answer:"Truck", options:["Truck","Bus","Car","Bike"]},
+  {emoji:"🚂", answer:"Train", options:["Train","Bus","Car","Bike"]},
+  {emoji:"🚀", answer:"Rocket", options:["Rocket","Plane","Car","Bus"]},
+  {emoji:"🛵", answer:"Scooter", options:["Scooter","Bike","Car","Bus"]},
+  {emoji:"🚓", answer:"Police Car", options:["Police Car","Car","Bus","Truck"]},
+  {emoji:"🚑", answer:"Ambulance", options:["Ambulance","Car","Bus","Truck"]},
+  {emoji:"🚒", answer:"Fire Truck", options:["Fire Truck","Truck","Car","Bus"]},
+];
+
+let current = 0;
+let score = 0;
+let questions = [];
+
+function startQuiz(type) {
+  if (type === 'animal') questions = [...animalQuestions];
+  if (type === 'color') questions = [...colorQuestions];
+  if (type === 'family') questions = [...familyQuestions];
+  if (type === 'fruit') questions = [...fruitQuestions];
+  if (type === 'vehicle') questions = [...vehicleQuestions];
+  current = 0;
+  score = 0;
+  document.getElementById('start-screen').classList.add('hidden');
+  document.getElementById('feedback').textContent = "";
+  document.getElementById('result').textContent = "";
+  document.getElementById('quiz-container').classList.remove('hidden');
+  document.getElementById('home-button').classList.add('hidden');
+  showQuestion();
+}
+
+function showQuestion() {
+  if (current >= questions.length) {
+    document.getElementById("quiz-container").innerHTML = "";
+    document.getElementById("feedback").textContent = "";
+    document.getElementById("result").textContent = `🎉 Quiz completed! Your score: ${score}/${questions.length}`;
+    document.getElementById("home-button").classList.remove("hidden");
+    return;
+  }
+
+  const q = questions[current];
+  const container = document.getElementById("quiz-container");
+  container.innerHTML = `
+    <div class="emoji">${q.emoji}</div>
+    <div class="options">
+      ${q.options.map(opt => `<button onclick="checkAnswer('${opt}')">${opt}</button>`).join('')}
+    </div>
+  `;
+}
+
+function checkAnswer(selected) {
+  const correct = questions[current].answer;
+  if (selected === correct) {
+    score++;
+    document.getElementById("feedback").textContent = "✅ Correct!";
+  } else {
+    document.getElementById("feedback").textContent = `❌ Wrong! Correct answer: ${correct}`;
+  }
+
+  current++;
+  setTimeout(() => {
+    document.getElementById("feedback").textContent = "";
+    showQuestion();
+  }, 1000);
+}
+
+function goHome() {
+  document.getElementById('start-screen').classList.remove('hidden');
+  document.getElementById('quiz-container').classList.add('hidden');
+  document.getElementById('home-button').classList.add('hidden');
+  document.getElementById('result').textContent = "";
+  document.getElementById('feedback').textContent = "";
+}
+</script>
+
+</body>
+</html>

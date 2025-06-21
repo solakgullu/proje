@@ -1,0 +1,241 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egitimler</title>
+
+<style>
+
+.header {
+ background-color: white;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 0 5%;
+ margin: 2px 5%;
+ border-radius: 30px ;
+ box-shadow: 0px 0px 17px -2px  rgba(0,0,0,0.75) ;
+ position: sticky;
+
+ z-index: 1000;
+ background-color: #003366;
+ position: sticky;
+  top: 0;
+
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+ .navbar {
+      display: flex;
+      justify-content: center; /* Ortalamak için */
+      padding: 15px;
+      gap: 30px; /* Menü öğeleri arası boşluk */
+       margin-left: 60px;
+     margin-right: 60px;
+    }
+.header .navbar a {
+    margin: 0 1px;
+    margin-left: 15px;
+    font-size: 1.6rem;
+    color: white;
+    border-bottom: 1px solid transparent;
+       text-decoration: none; /* Alt çizgiyi kaldırır */
+    transition: border-color 0.3s ease; /* Yumuşak geçiş */
+    
+}
+
+.header .navbar a:hover {
+    border-color: black;
+    padding-bottom: 5 px;
+
+}
+
+body {
+  background-image: url("arkaplan3.jpg");
+  background-size: cover;
+  background-position: center; 
+   }
+
+ .courses {
+      padding: 40px;
+      margin: 35px;
+      background-image: url("arka7.jpg");
+    }
+    .courses h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+    .course-item {
+      width: 130px;
+      background: rgb(244, 244, 174);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .course-item h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+   
+.course {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.course h3{
+  color: #333;
+
+}
+.course img {
+    width: 100px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.course-info h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #222;
+}
+
+.course-info p {
+    margin: 5px 0 0;
+    color: #555;
+}
+.description {
+            display: none; /* Başlangıçta gizli */
+        }
+
+</style>
+
+
+<!-- giris yap ikonu-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+</head>
+<body>
+    
+
+<header class="header" >
+        <a href="#" >
+            <img src = "logo3.jpg" alt="logo" title="learn english" height="90px"  >
+        </a>
+
+<nav class="navbar" >
+
+    <a href="index.html" > Anasayfa</a>
+    <a href="egitim.html" target="_blank">Eğitimler</a>
+    <a href="fiyat.html"  target="_blank"> Kampanyalar</a>
+    <a href="hakkimizda.html" target="_blank">Hakkımızda</a>
+    <a href="iletisim.html" target="_blank" > İletişim</a>
+</nav>
+<div> 
+ <button onclick="window.open('giris.html', '_blank')">
+         <i class="fas fa-user"></i>
+       </button>
+</div>
+
+        </header>
+    <!--  header  bitti -->
+
+<section class="courses" id="courses">
+    <h2>Kurslarımız</h2>
+    <div class="course-list">   
+      <div class="course-item">
+         <a href="beginner-test.html" > <h3>Başlangıç ​Seviyesi İngilizce</h3></a>
+        <p>Temel kelime bilgisi, dil bilgisi ve günlük ifadeler.</p>
+      </div>
+      <div class="course-item">
+        <a href="ortaseviye-test.html" > <h3>Orta Seviye İngilizce</h3> </a>
+        <p>Konuşma ve anlamada güven oluşturmak.</p>
+      </div>
+      <div class="course-item">
+       <a href="is-test.html" >  <h3>İş İngilizcesi</h3> </a>
+        <p>İşyerinde dil becerilerinizi geliştirin.</p>
+      </div>
+       <div class="course-item">
+        <a href="cocuk.html" > <h3>Çocuk İngilizce</h3> </a>
+        <p> Oyunlar, şarkılar ve hikâyelerle İngilizce artık çok daha kolay!</p>
+      </div>
+    </div>
+  </section>
+
+    <div class="container">
+        <h1>Özel Dersler</h1>
+    
+<div class="course">
+        <img src="hoca.jpg" width="150">
+        <div class="course-info">
+            <h2 id="kayla-title">Kayla</h2>
+            <h4>İngilizce</h4>
+            <p>
+                Ben Kayla, 21 yaşında Güney Afrikalıyım ve 7 yıllık öğretim deneyimim var. Finans Muhasebesi diplomasına sahibim. Şu anda İşletme Yönetimi okuyorum ve öğrencilerin İngilizce dil hedeflerine güvenle ve net bir şekilde ulaşmalarına yardımcı olmaktan tutku duyuyorum!
+            </p>
+        </div>
+    </div>
+
+
+  <div class="course">
+        <img src="hoca2.jpg" width="150">
+        <div class="course-info">
+            <h2 id="luke-title">Luke</h2>
+            <h4>İngilizce</h4>
+            <p >
+                Merhaba, benim adım Luke. Ben İngiltere’nin Leicester şehrinde doğdum ve 12 yaşında Türkiye’ye taşındım. Tüm eğitimimi Türkiye’de tamamladım ve dolayısıyla Türkçe benim 2. dilim oldu. Birçok online öğretim tecrübem var ve yeni hedefler koyup kendimi geliştirmeyi çok seviyorum. 2022 yılında TEFL sertifikamı aldım. Aynı zamanda yüz yüze de birçok ders verdim.
+            </p>
+        </div>
+    </div>
+
+         <div class="course">
+        <img src="hoca3.jpg" width="150">
+        <div class="course-info">
+            <h2 id="jessica-title">Jessica</h2>
+            <h4>İngilizce</h4>
+            <p >
+                Merhaba, ben Jessica! Güney İngiltere'den deneyimli bir İngilizce öğretmeniyim ve 13 yılı aşkın bir öğretim tecrübem var. Nötr bir İngilizce aksanım var, bu da telaffuzunuzu ve iletişiminizi geliştirmenizi kolaylaştırıyor. Konuşma İngilizcesi, iş iletişimi ve iş için İngilizce konularında uzmanım, öğrencilerin gerçek hayattaki durumlarda kendilerine güven kazanmalarına yardımcı oluyorum.
+            </p>
+        </div>
+        </div>
+
+    </div>
+
+<script>
+  /* eğitmenler */
+
+    document.getElementById("kayla-title").addEventListener("click", function () {
+        toggleDesc("kayla-desc");
+    });
+
+    document.getElementById("luke-title").addEventListener("click", function () {
+        toggleDesc("luke-desc");
+    });
+
+    document.getElementById("jessica-title").addEventListener("click", function () {
+        toggleDesc("jessica-desc");
+    });
+
+    function toggleDesc(id) {
+        const desc = document.getElementById(id);
+        desc.style.display = (desc.style.display === "block") ? "none" : "block";
+    }
+
+</script>
+
+
+
+
+ </body>
+</html>

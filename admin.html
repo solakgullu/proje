@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Paneli - Üyeler</title>
+ <style>
+    body {
+      background-color: #ebeece; 
+  
+    }
+  </style>
+</head>
+<body>
+  <h2>Admin Paneli - Üyeler Listesi</h2>
+  <table border="1" id="usersTable">
+    <thead>
+      <tr>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>E-posta</th>
+        <th>Telefon</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+
+
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA26XLG7jdLhyZ6HyzhuapXON-kCn0jNd4",
+      authDomain: "learnenglish-b0777.firebaseapp.com",
+      projectId: "learnenglish-b0777",
+      storageBucket: "learnenglish-b0777.appspot.com",
+      messagingSenderId: "547469954131",
+      appId: "1:547469954131:web:1869e9a6c702bffad04aa6",
+      measurementId: "G-6F3C3SXK32"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const adminUID = "EnDq86ydzuTTLzLkHY83ELZzarK2"; // benim UİD
+
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        if (user.uid === adminUID) {
+          // Admin giriş yapınca  kullanıcıları listele
+
+          await listeleKullanicilar();
+        } else {
+          alert("Bu sayfayı görüntülemeye yetkiniz yok!");
+          window.location.href = "login.html"; 
+        }
+      } else {
+        alert("Lütfen önce giriş yapın!");
+        window.location.href = "login.html";
+      }
+    });
+
+    async function listeleKullanicilar() {
+      const tbody = document.querySelector("#usersTable tbody");
+      tbody.innerHTML = ""; 
+
+      try {
+        const querySnapshot = await getDocs(collection(db, "users"));
+
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${data.ad || ""}</td>
+            <td>${data.soyad || ""}</td>
+            <td>${data.email || ""}</td>
+            <td>${data.telefon || ""}</td>
+          `;
+          tbody.appendChild(row);
+        });
+
+      } catch (error) {
+        alert("Kullanıcılar getirilirken hata oluştu: " + error.message);
+      }
+    }
+  </script>
+</body>
+</html>

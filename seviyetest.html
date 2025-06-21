@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>İngilizce Seviye Belirleme Testi</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
+    .test-container {
+      background: #fff;
+      border-radius: 8px;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    fieldset {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+      position: relative;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+    /* Doğru - Yanlış işaretleri için */
+    .correct-mark, .wrong-mark {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .correct-mark {
+      color: green;
+    }
+    .wrong-mark {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-container">
+    <h3>İngilizce Seviye Belirleme Testi</h3>
+    <form id="quiz-form">
+
+      <fieldset id="f-q1">
+        <legend>1. Which sentence is correct?</legend>
+        <label><input type="radio" name="q1" value="B"> A) She go to school every day.</label><br>
+        <label><input type="radio" name="q1" value="A"> B) She goes to school every day.</label><br>
+        <label><input type="radio" name="q1" value="C"> C) She going to school every day.</label>
+      </fieldset>
+
+      <fieldset id="f-q2">
+        <legend>2. What is the past form of "eat"?</legend>
+        <label><input type="radio" name="q2" value="A"> A) ate</label><br>
+        <label><input type="radio" name="q2" value="B"> B) eated</label><br>
+        <label><input type="radio" name="q2" value="C"> C) eaten</label>
+      </fieldset>
+
+      <fieldset id="f-q3">
+        <legend>3. I _____ TV when you called me.</legend>
+        <label><input type="radio" name="q3" value="A"> A) watch</label><br>
+        <label><input type="radio" name="q3" value="B"> B) was watching</label><br>
+        <label><input type="radio" name="q3" value="C"> C) watched</label>
+      </fieldset>
+
+      <fieldset id="f-q4">
+        <legend>4. Which word is an adjective?</legend>
+        <label><input type="radio" name="q4" value="A"> A) quickly</label><br>
+        <label><input type="radio" name="q4" value="B"> B) happiness</label><br>
+        <label><input type="radio" name="q4" value="C"> C) beautiful</label>
+      </fieldset>
+
+      <fieldset id="f-q5">
+        <legend>5. Choose the correct question:</legend>
+        <label><input type="radio" name="q5" value="A"> A) What time you get up?</label><br>
+        <label><input type="radio" name="q5" value="B"> B) What time do you get up?</label><br>
+        <label><input type="radio" name="q5" value="C"> C) What time does you get up?</label>
+      </fieldset>
+
+      <fieldset id="f-q6">
+        <legend>6. What does “I’ve been working all day” mean?</legend>
+        <label><input type="radio" name="q6" value="A"> A) I just started working.</label><br>
+        <label><input type="radio" name="q6" value="B"> B) I worked yesterday.</label><br>
+        <label><input type="radio" name="q6" value="C"> C) I started earlier today and I am still working or recently stopped.</label>
+      </fieldset>
+
+      <fieldset id="f-q7">
+        <legend>7. Which sentence is in the passive voice?</legend>
+        <label><input type="radio" name="q7" value="A"> A) They built a new school.</label><br>
+        <label><input type="radio" name="q7" value="B"> B) A new school was built.</label><br>
+        <label><input type="radio" name="q7" value="C"> C) They are building a school.</label>
+      </fieldset>
+
+      <fieldset id="f-q8">
+        <legend>8. What’s the correct comparative form?</legend>
+        <label><input type="radio" name="q8" value="A"> A) more fast</label><br>
+        <label><input type="radio" name="q8" value="B"> B) faster</label><br>
+        <label><input type="radio" name="q8" value="C"> C) fastly</label>
+      </fieldset>
+
+      <fieldset id="f-q9">
+        <legend>9. What time ___ you usually get up?</legend>
+        <label><input type="radio" name="q9" value="b"> A) do</label><br>
+        <label><input type="radio" name="q9" value="a"> B) does</label><br>
+        <label><input type="radio" name="q9" value="c"> C) are</label>
+      </fieldset>
+
+      <fieldset id="f-q10">
+        <legend>10. I ___ to the gym twice a week.</legend>
+        <label><input type="radio" name="q10" value="a"> A) go</label><br>
+        <label><input type="radio" name="q10" value="b"> B) goes</label><br>
+        <label><input type="radio" name="q10" value="c"> C) going</label>
+      </fieldset>
+
+      <fieldset id="f-q11">
+        <legend>11. She has been working here ___ 2019.</legend>
+        <label><input type="radio" name="q11" value="a"> A) since</label><br>
+        <label><input type="radio" name="q11" value="b"> B) for</label><br>
+        <label><input type="radio" name="q11" value="c"> C) from</label>
+      </fieldset>
+
+      <fieldset id="f-q12">
+        <legend>12. They ___ to Paris last summer.</legend>
+        <label><input type="radio" name="q12" value="a"> A) go</label><br>
+        <label><input type="radio" name="q12" value="b"> B) went</label><br>
+        <label><input type="radio" name="q12" value="c"> C) gone</label>
+      </fieldset>
+
+      <fieldset id="f-q13">
+        <legend>13. If I ___ you, I would take the job.</legend>
+        <label><input type="radio" name="q13" value="a"> A) was</label><br>
+        <label><input type="radio" name="q13" value="b"> B) were</label><br>
+        <label><input type="radio" name="q13" value="c"> C) am</label>
+      </fieldset>
+
+      <fieldset id="f-q14">
+        <legend>14. I can’t find my keys. I ___ lost them.</legend>
+        <label><input type="radio" name="q14" value="a"> A) must have</label><br>
+        <label><input type="radio" name="q14" value="b"> B) should</label><br>
+        <label><input type="radio" name="q14" value="c"> C) have to</label>
+      </fieldset>
+
+      <fieldset id="f-q15">
+        <legend>15. She ___ in London for five years now.</legend>
+        <label><input type="radio" name="q15" value="a"> A) lives</label><br>
+        <label><input type="radio" name="q15" value="b"> B) lived</label><br>
+        <label><input type="radio" name="q15" value="c"> C) has lived</label>
+      </fieldset>
+
+      <fieldset id="f-q16">
+        <legend>16. ___ you ever been to New York?</legend>
+        <label><input type="radio" name="q16" value="a"> A) Do</label><br>
+        <label><input type="radio" name="q16" value="b"> B) Have</label><br>
+        <label><input type="radio" name="q16" value="c"> C) Did</label>
+      </fieldset>
+
+      <fieldset id="f-q17">
+        <legend>17. He speaks English very ___.</legend>
+        <label><input type="radio" name="q17" value="a"> A) good</label><br>
+        <label><input type="radio" name="q17" value="b"> B) well</label><br>
+        <label><input type="radio" name="q17" value="c"> C) better</label>
+      </fieldset>
+
+      <fieldset id="f-q18">
+        <legend>18. A: “I’m really tired.” B: “You ___ go to bed earlier.”</legend>
+        <label><input type="radio" name="q18" value="a"> A) must</label><br>
+        <label><input type="radio" name="q18" value="b"> B) should</label><br>
+        <label><input type="radio" name="q18" value="c"> C) have to</label>
+      </fieldset>
+
+      <button type="button" onclick="checkAnswers()">Sonuçları Gör</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+<br>
+  <a href="index.html" > Anasayfaya dön</a>
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "A",
+        q2: "A",
+        q3: "B",
+        q4: "C",
+        q5: "B",
+        q6: "C",
+        q7: "B",
+        q8: "B",
+        q9: "b",
+        q10: "a",
+        q11: "a",
+        q12: "b",
+        q13: "b",
+        q14: "a",
+        q15: "c",
+        q16: "b",
+        q17: "b",
+        q18: "b"
+      };
+
+      let score = 0;
+      let total = Object.keys(answers).length;
+
+      // İşaretleri temizle
+      document.querySelectorAll('.correct-mark, .wrong-mark').forEach(el => el.remove());
+
+      for (let key in answers) {
+        let selected = document.querySelector(`input[name="${key}"]:checked`);
+        let fieldset = document.getElementById(`f-${key}`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+          // Doğru ise yeşil tik ekle
+          let mark = document.createElement('span');
+          mark.className = 'correct-mark';
+          mark.textContent = '✓';
+          fieldset.appendChild(mark);
+        } else {
+          // Yanlış ise kırmızı çarpı ekle
+          let mark = document.createElement('span');
+          mark.className = 'wrong-mark';
+          mark.textContent = '✗';
+          fieldset.appendChild(mark);
+        }
+      }
+
+      let level = "";
+      if (score <= 6) level = "Başlangıç Seviyesi 🔴";
+      else if (score <= 12) level = "Orta Seviye 🟡";
+      else level = "İleri Seviye 🔵";
+
+      document.getElementById("result").innerText = `Skorunuz: ${score}/${total} → Seviyeniz: ${level}`;
+    }
+  </script>
+</body>
+</html>

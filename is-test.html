@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>İngilizce Seviye Testi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+    .tabs {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .tab-btn {
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #ddd;
+      font-weight: bold;
+      user-select: none;
+    }
+    .tab-btn.active {
+      background-color: #007BFF;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+    }
+    .test-container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    .question p {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 3px;
+      cursor: pointer;
+     
+      padding: 5px 8px;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 20px auto;
+      display: block;
+      cursor: pointer;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    #result {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>İngilizce Seviye Testi</h1>
+
+  <div class="tabs">
+    <div class="tab-btn active" onclick="showTest('C1', this)">C1</div>
+    <div class="tab-btn" onclick="showTest('C2', this)">C2</div>
+  </div>
+
+  <div id="testArea" class="test-container"></div>
+
+  <button onclick="submitTest()">Testi Bitir</button>
+  <div id="result"></div>
+
+  <script>
+    const questions = {
+      C1: [
+        { q: "Had I known about the traffic, I ___ earlier.", options: ["would leave", "would have left", "had left"], correct: 1 },
+        { q: "She denied ___ the meeting.", options: ["to attend", "attending", "attend"], correct: 1 },
+        { q: "It's high time he ___ responsibility.", options: ["takes", "took", "has taken"], correct: 1 },
+        { q: "If I ___ more time, I would have finished the book.", options: ["had", "have had", "had had"], correct: 2 },
+        { q: "I wish I ___ more languages.", options: ["know", "knew", "had known"], correct: 1 },
+        { q: "He suggested that she ___ earlier.", options: ["arrive", "arrived", "arrives"], correct: 0 },
+        { q: "I regret ___ her advice.", options: ["not to take", "not taking", "not taken"], correct: 1 },
+        { q: "He acted as though he ___ nothing about it.", options: ["knows", "knew", "has known"], correct: 1 },
+        { q: "But for your help, I ___ failed.", options: ["would", "would have", "will have"], correct: 1 },
+        { q: "This machine is used ___ metal.", options: ["for cut", "cut", "to cut"], correct: 2 },
+        { q: "They insisted ___ us dinner.", options: ["to cook", "on cooking", "cooking"], correct: 1 },
+        { q: "Had I not been ill, I ___ to the party.", options: ["would come", "would have come", "had come"], correct: 1 },
+        { q: "It was essential that she ___ on time.", options: ["is", "was", "be"], correct: 2 },
+        { q: "She spoke as if she ___ everything.", options: ["knew", "knows", "has known"], correct: 0 },
+        { q: "He apologized for ___ late.", options: ["to be", "being", "be"], correct: 1 }
+      ],
+      C2: [
+        { q: "No sooner had she arrived ___ it started raining.", options: ["when", "than", "then"], correct: 1 },
+        { q: "Scarcely had they finished dinner ___ the doorbell rang.", options: ["when", "than", "then"], correct: 0 },
+        { q: "Were I to win the lottery, I ___ travel the world.", options: ["will", "would", "shall"], correct: 1 },
+        { q: "Little ___ she know what awaited her.", options: ["did", "does", "had"], correct: 0 },
+        { q: "Only after the meeting ___ the mistake.", options: ["she noticed", "noticed she", "did she notice"], correct: 2 },
+        { q: "Not until he apologized ___ to speak to him.", options: ["I agreed", "did I agree", "agree I did"], correct: 1 },
+        { q: "Hardly had I sat down ___ the phone rang.", options: ["than", "when", "while"], correct: 1 },
+        { q: "At no time ___ the rules.", options: ["he broke", "broke he", "did he break"], correct: 2 },
+        { q: "Were it not for your help, I ___ failed.", options: ["would have", "will have", "would"], correct: 0 },
+        { q: "Not only ___ but also intelligent.", options: ["she is beautiful", "is she beautiful", "beautiful is she"], correct: 1 },
+        { q: "Seldom ___ such talent.", options: ["have I seen", "I have seen", "seen I have"], correct: 0 },
+        { q: "Had it not been for the rain, we ___.", options: ["will go", "would go", "would have gone"], correct: 2 },
+        { q: "Rarely ___ such dedication.", options: ["do we witness", "we witness", "witness we do"], correct: 0 },
+        { q: "So difficult ___ that only a few succeeded.", options: ["the test was", "was the test", "the test has been"], correct: 1 },
+        { q: "Never before ___ such a sight.", options: ["I have seen", "have I seen", "seen I have"], correct: 1 }
+      ]
+    };
+
+    let currentLevel = 'C1';
+
+    function showTest(level, btn) {
+      currentLevel = level;
+
+      // Butonların görünümünü güncelle
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Soruları yükle
+      const container = document.getElementById('testArea');
+      container.innerHTML = '';
+      const selectedQuestions = questions[level];
+
+      selectedQuestions.forEach((item, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.classList.add('question');
+        questionDiv.innerHTML = `
+          <p>${index + 1}. ${item.q}</p>
+          <div class="answers">
+            ${item.options.map((opt, i) => `
+              <label>
+                <input type="radio" name="q${index}" value="${i}">
+                ${opt}
+              </label>
+            `).join('')}
+          </div>
+        `;
+        container.appendChild(questionDiv);
+      });
+
+      document.getElementById('result').innerText = '';
+    }
+
+    function submitTest() {
+      const selectedQuestions = questions[currentLevel];
+      let score = 0;
+
+      selectedQuestions.forEach((item, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        const questionDiv = document.querySelectorAll('.question')[index];
+
+        // Önceki sonucu kaldır
+        const existingResult = questionDiv.querySelector('.result-icon');
+        if (existingResult) existingResult.remove();
+
+        const icon = document.createElement('span');
+        icon.classList.add('result-icon');
+        icon.style.marginLeft = '10px';
+        icon.style.fontWeight = 'bold';
+
+        if (selected && parseInt(selected.value) === item.correct) {
+          icon.textContent = ' ✅';
+          icon.style.color = 'green';
+          score++;
+        } else {
+          icon.textContent = ' ❌';
+          icon.style.color = 'red';
+        }
+
+        questionDiv.querySelector('p').appendChild(icon);
+      });
+
+      document.getElementById('result').innerText = `Doğru Sayısı: ${score} / ${selectedQuestions.length}`;
+    }
+
+    window.onload = () => {
+      // İlk açılışta C1 testi göster
+      showTest('C1', document.querySelector('.tab-btn.active'));
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>İngilizce Testleri - A1 ve A2</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .btn-group button {
+      margin: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    form {
+      margin-top: 20px;
+    }
+    fieldset {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      position: relative;
+    }
+    legend {
+      font-weight: bold;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .hidden {
+      display: none;
+    }
+    .feedback {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>İngilizce Testleri</h2>
+    <div class="btn-group">
+      <button id="btnA1">A1 Seviyesi</button>
+      <button id="btnA2">A2 Seviyesi</button>
+    </div>
+
+    <!-- A1 Testi -->
+    <form id="testA1" class="hidden">
+      <h3>A1 İngilizce Testi</h3>
+
+      <fieldset>
+        <legend>1. What is the plural of "cat"?</legend>
+        <label><input type="radio" name="q1" value="a"> cats</label><br>
+        <label><input type="radio" name="q1" value="b"> caties</label><br>
+        <label><input type="radio" name="q1" value="c"> catz</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Choose the correct sentence:</legend>
+        <label><input type="radio" name="q2" value="a"> She like apples.</label><br>
+        <label><input type="radio" name="q2" value="b"> She likes apples.</label><br>
+        <label><input type="radio" name="q2" value="c"> She liking apples.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. What color is the sky?</legend>
+        <label><input type="radio" name="q3" value="a"> Green</label><br>
+        <label><input type="radio" name="q3" value="b"> Blue</label><br>
+        <label><input type="radio" name="q3" value="c"> Red</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. How do you say "Merhaba" in English?</legend>
+        <label><input type="radio" name="q4" value="a"> Goodbye</label><br>
+        <label><input type="radio" name="q4" value="b"> Hello</label><br>
+        <label><input type="radio" name="q4" value="c"> Thanks</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Which one is a fruit?</legend>
+        <label><input type="radio" name="q5" value="a"> Carrot</label><br>
+        <label><input type="radio" name="q5" value="b"> Apple</label><br>
+        <label><input type="radio" name="q5" value="c"> Potato</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. What is the opposite of "hot"?</legend>
+        <label><input type="radio" name="q6" value="a"> Cold</label><br>
+        <label><input type="radio" name="q6" value="b"> Warm</label><br>
+        <label><input type="radio" name="q6" value="c"> Big</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>7. Which is a correct greeting in the morning?</legend>
+        <label><input type="radio" name="q7" value="a"> Good night</label><br>
+        <label><input type="radio" name="q7" value="b"> Good morning</label><br>
+        <label><input type="radio" name="q7" value="c"> Goodbye</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>8. I ___ a student.</legend>
+        <label><input type="radio" name="q8" value="a"> is</label><br>
+        <label><input type="radio" name="q8" value="b"> am</label><br>
+        <label><input type="radio" name="q8" value="c"> are</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>9. Which number comes after five?</legend>
+        <label><input type="radio" name="q9" value="a"> Four</label><br>
+        <label><input type="radio" name="q9" value="b"> Six</label><br>
+        <label><input type="radio" name="q9" value="c"> Seven</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>10. What day comes after Monday?</legend>
+        <label><input type="radio" name="q10" value="a"> Sunday</label><br>
+        <label><input type="radio" name="q10" value="b"> Tuesday</label><br>
+        <label><input type="radio" name="q10" value="c"> Friday</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>11. Which is a color?</legend>
+        <label><input type="radio" name="q11" value="a"> Chair</label><br>
+        <label><input type="radio" name="q11" value="b"> Blue</label><br>
+        <label><input type="radio" name="q11" value="c"> Table</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>12. What is the opposite of "big"?</legend>
+        <label><input type="radio" name="q12" value="a"> Small</label><br>
+        <label><input type="radio" name="q12" value="b"> Tall</label><br>
+        <label><input type="radio" name="q12" value="c"> Long</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>13. How do you say "Teşekkür ederim" in English?</legend>
+        <label><input type="radio" name="q13" value="a"> Please</label><br>
+        <label><input type="radio" name="q13" value="b"> Sorry</label><br>
+        <label><input type="radio" name="q13" value="c"> Thank you</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>14. What do you wear on your feet?</legend>
+        <label><input type="radio" name="q14" value="a"> Gloves</label><br>
+        <label><input type="radio" name="q14" value="b"> Shoes</label><br>
+        <label><input type="radio" name="q14" value="c"> Hat</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>15. Which one is a pet?</legend>
+        <label><input type="radio" name="q15" value="a"> Dog</label><br>
+        <label><input type="radio" name="q15" value="b"> Car</label><br>
+        <label><input type="radio" name="q15" value="c"> Chair</label>
+      </fieldset>
+
+      <button type="button" onclick="checkAnswers('A1')">Sonuçları Gör</button>
+    </form>
+
+    <!-- A2 Testi -->
+    <form id="testA2" class="hidden">
+      <h3>A2 İngilizce Testi</h3>
+
+      <fieldset>
+        <legend>1. I ___ to the market yesterday.</legend>
+        <label><input type="radio" name="q1" value="a"> go</label><br>
+        <label><input type="radio" name="q1" value="b"> went</label><br>
+        <label><input type="radio" name="q1" value="c"> gone</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. She ___ her homework every day.</legend>
+        <label><input type="radio" name="q2" value="a"> do</label><br>
+        <label><input type="radio" name="q2" value="b"> does</label><br>
+        <label><input type="radio" name="q2" value="c"> did</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. We have ___ lunch already.</legend>
+        <label><input type="radio" name="q3" value="a"> ate</label><br>
+        <label><input type="radio" name="q3" value="b"> eaten</label><br>
+        <label><input type="radio" name="q3" value="c"> eating</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. They ___ to Paris last summer.</legend>
+        <label><input type="radio" name="q4" value="a"> goes</label><br>
+        <label><input type="radio" name="q4" value="b"> went</label><br>
+        <label><input type="radio" name="q4" value="c"> going</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. I am looking forward to ___ you.</legend>
+        <label><input type="radio" name="q5" value="a"> seeing</label><br>
+        <label><input type="radio" name="q5" value="b"> see</label><br>
+        <label><input type="radio" name="q5" value="c"> saw</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. He ___ not like spicy food.</legend>
+        <label><input type="radio" name="q6" value="a"> do</label><br>
+        <label><input type="radio" name="q6" value="b"> does</label><br>
+        <label><input type="radio" name="q6" value="c"> did</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>7. They have been friends ___ childhood.</legend>
+        <label><input type="radio" name="q7" value="a"> since</label><br>
+        <label><input type="radio" name="q7" value="b"> for</label><br>
+        <label><input type="radio" name="q7" value="c"> during</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>8. She ___ to music when I called.</legend>
+        <label><input type="radio" name="q8" value="a"> listen</label><br>
+        <label><input type="radio" name="q8" value="b"> was listening</label><br>
+        <label><input type="radio" name="q8" value="c"> listened</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>9. If it ___ tomorrow, we will stay home.</legend>
+        <label><input type="radio" name="q9" value="a"> rains</label><br>
+        <label><input type="radio" name="q9" value="b"> rain</label><br>
+        <label><input type="radio" name="q9" value="c"> rained</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>10. I ___ never been to New York.</legend>
+        <label><input type="radio" name="q10" value="a"> have</label><br>
+        <label><input type="radio" name="q10" value="b"> has</label><br>
+        <label><input type="radio" name="q10" value="c"> had</label>
+      </fieldset>
+
+      <button type="button" onclick="checkAnswers('A2')">Sonuçları Gör</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+<br>
+  <a href="index.html" > Anasayfaya dön</a>
+  <script>
+    const btnA1 = document.getElementById('btnA1');
+    const btnA2 = document.getElementById('btnA2');
+    const testA1 = document.getElementById('testA1');
+    const testA2 = document.getElementById('testA2');
+    const resultDiv = document.getElementById('result');
+
+    btnA1.addEventListener('click', () => {
+      testA1.classList.remove('hidden');
+      testA2.classList.add('hidden');
+      resultDiv.innerHTML = '';
+      clearFeedback(testA1);
+    });
+
+    btnA2.addEventListener('click', () => {
+      testA2.classList.remove('hidden');
+      testA1.classList.add('hidden');
+      resultDiv.innerHTML = '';
+      clearFeedback(testA2);
+    });
+
+    const correctAnswers = {
+      A1: {
+        q1: 'a', q2: 'b', q3: 'b', q4: 'b', q5: 'b',
+        q6: 'a', q7: 'b', q8: 'b', q9: 'b', q10: 'b',
+        q11: 'b', q12: 'a', q13: 'c', q14: 'b', q15: 'a'
+      },
+      A2: {
+        q1: 'b', q2: 'b', q3: 'b', q4: 'b', q5: 'a',
+        q6: 'b', q7: 'a', q8: 'b', q9: 'a', q10: 'a'
+      }
+    };
+
+    function checkAnswers(level) {
+      const form = level === 'A1' ? testA1 : testA2;
+      const answers = correctAnswers[level];
+      let score = 0;
+      clearFeedback(form);
+
+      for (const q in answers) {
+        const userAnswer = form.querySelector(`input[name=${q}]:checked`);
+        const fieldset = form.querySelector(`input[name=${q}]`).closest('fieldset');
+
+        const feedbackSpan = document.createElement('span');
+        feedbackSpan.classList.add('feedback');
+
+        if (!userAnswer) {
+          feedbackSpan.textContent = 'Seçilmedi';
+          feedbackSpan.classList.add('incorrect');
+          fieldset.appendChild(feedbackSpan);
+          continue;
+        }
+
+        if (userAnswer.value === answers[q]) {
+          score++;
+          feedbackSpan.textContent = '✓ Doğru';
+          feedbackSpan.classList.add('correct');
+        } else {
+          feedbackSpan.textContent = '✗ Yanlış';
+          feedbackSpan.classList.add('incorrect');
+        }
+
+        fieldset.appendChild(feedbackSpan);
+      }
+
+      resultDiv.textContent = `Doğru sayısı: ${score} / ${Object.keys(answers).length}`;
+    }
+
+    function clearFeedback(form) {
+      const feedbacks = form.querySelectorAll('.feedback');
+      feedbacks.forEach(fb => fb.remove());
+    }
+  </script>
+</body>
+</html>

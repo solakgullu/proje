@@ -1,0 +1,455 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn english</title>
+    <link rel= "stylesheet" href="style.css" />
+
+   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+
+</head>
+<body>
+
+    <header class="header" >
+        <a href="#" >
+            <img src = "logo3.jpg" alt="logo" title="learn english" height="90px"  >
+        </a>
+
+    <nav class="navbar">
+      <a href="index.html">Anasayfa</a>
+      <a href="egitim.html" target="_blank">Eğitimler</a>
+      <a href="fiyat.html" target="_blank">Kampanyalar</a>
+      <a href="hakkimizda.html" target="_blank">Hakkımızda</a>
+      <a href="iletisim.html" target="_blank">İletişim</a>
+    </nav>
+
+    <div>
+      <button onclick="window.open('giris.html', '_blank')">
+        <i class="fas fa-user"></i>
+      </button>
+    </div>
+
+    <div class="button">
+      <button onclick="showCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </button>
+    </div>
+
+    <div id="cart-modal" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background: rgb(232, 192, 203); padding:20px; border:1px solid #ccc; z-index:10;">
+      <h3>Sepetiniz</h3>
+      <ul id="cart-list"></ul>
+      <button onclick="closeCart()">Kapat</button>
+    </div>
+
+   
+  </header>
+
+  <!-- Ana Bölüm -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Seviyeni Hemen Öğren!</h2>
+        <p>Ücretsiz olarak dil seviyenizi öğrenin.</p>
+        <a href="seviyetest.html" class="cta-button">Teste Başla!</a>
+      </div>
+    </section>
+
+    <section class="hero2">
+      <div class="container">
+        <h2>Hedeflerini belirleyerek öğrenmeye başla</h2>
+        <p>Hedeflerine ulaşman için sana dersler, ders konuları, aktiviteler önereceğiz.<br>İçlerinden hedeflerine adım adım ilerlemeni sağlayacak olanları seç.</p>
+      </div>
+    </section>
+
+    <section class="courses" id="courses">
+      <h2>Kurslarımız</h2>
+      <div class="course-list">
+        <div class="course-item">
+          <a href="beginner-test.html"><h3>Başlangıç Seviyesi İngilizce</h3></a>
+          <p>Temel kelime bilgisi, dil bilgisi ve günlük ifadeler.</p>
+        </div>
+        <div class="course-item">
+          <a href="ortaseviye-test.html"><h3>Orta Seviye İngilizce</h3></a>
+          <p>Konuşma ve anlamada güven oluşturmak.</p>
+        </div>
+        <div class="course-item">
+          <a href="is-test.html"><h3>İş İngilizcesi</h3></a>
+          <p>İşyerinde dil becerilerinizi geliştirin. İleri düzey İngilizce.</p>
+        </div>
+        <div class="course-item">
+          <a href="cocuk.html"><h3>Çocuk İngilizcesi</h3></a>
+          <p>Oyunlar, şarkılar ve hikâyelerle İngilizce artık çok daha kolay!</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <h1>Özel Dersler</h1>
+      <div class="course">
+        <img src="hoca.jpg" width="150">
+        <div class="course-info">
+          <h2 id="kayla-title">Kayla</h2>
+          <h4>İngilizce</h4>
+          <p > Ben Kayla, 21 yaşında Güney Afrikalıyım ve 7 yıllık öğretim deneyimim var. 
+            Finans Muhasebesi diplomasına sahibim. Şu anda İşletme Yönetimi okuyorum ve öğrencilerin İngilizce dil hedeflerine 
+            güvenle ve net bir şekilde ulaşmalarına yardımcı olmaktan tutku duyuyorum!
+            </p>
+            </div>
+      </div>
+
+      <div class="course">
+        <img src="hoca2.jpg" width="150">
+        <div class="course-info">
+          <h2 id="luke-title">Luke</h2>
+          <h4>İngilizce</h4>
+          <p > Merhaba, benim adım Luke. Ben İngiltere’nin 
+            Leicester şehrinde doğdum ve 12 yaşında Türkiye’ye taşındım. Tüm eğitimimi Türkiye’de tamamladım ve 
+            dolayısıyla Türkçe benim 2. dilim oldu. Birçok online öğretim tecrübem var ve yeni hedefler koyup kendimi geliştirmeyi 
+            çok seviyorum. 2022 yılında TEFL sertifikamı aldım. Aynı zamanda yüz yüze de birçok ders verdim.
+            </p>
+        </div>
+      </div>
+
+
+      
+
+      <div class="course">
+        <img src="hoca3.jpg" width="150">
+        <div class="course-info">
+          <h2 id="jessica-title">Jessica</h2>
+          <h4>İngilizce</h4>
+          <p >   Merhaba, ben Jessica! Güney İngiltere'den deneyimli bir İngilizce öğretmeniyim ve 13 yılı 
+            aşkın bir öğretim tecrübem var. Nötr bir İngilizce aksanım var, bu da telaffuzunuzu ve iletişiminizi geliştirmenizi kolaylaştırıyor. 
+            Konuşma İngilizcesi, iş iletişimi ve iş için İngilizce konularında uzmanım, öğrencilerin gerçek hayattaki durumlarda kendilerine güven kazanmalarına 
+            yardımcı oluyorum.
+            </p>
+            </div>
+      </div>
+    </div>
+
+     <section class="features" id="features">
+
+   <h2> Neden bizi seçmelisiniz?</h2>
+    <div class="feature-box">
+        
+      <h3>İnteraktif Dersler</h3>
+      <p>Gerçek yaşam senaryolarıyla etkileşime geçin ve konuşma becerilerinizi geliştirin.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Uzman Eğitmen</h3>
+      <p>Sertifikalı İngilizce eğitmenlerinden ve ana dili İngilizce olan kişilerden öğrenin.</p>
+    </div>
+    <div class="feature-box">
+      <h3>İlerlemeyi Takip Edin</h3>
+      <p>Performansınızı izleyin ve başarılarınızı kutlayın.</p>
+    </div>
+</section>
+    <!-- Kayıt Formu -->
+    <div class="form-container" id="register-form">
+      <h2>Kayıt Ol</h2>
+      <form id="registerForm">
+        <input type="text" id="fullname" placeholder="Ad Soyad" required>
+        <input type="email" id="email" placeholder="E-posta" required>
+        <input type="number" id="telefon" placeholder="Telefon" required>
+        <input type="password" id="password" placeholder="Şifre" required>
+        <button type="submit">Kayıt Ol</button>
+      </form>
+      <p>Zaten üye misiniz? <a href="#" id="show-login">Giriş yap</a></p>
+    </div>
+
+    <!-- Giriş Formu -->
+    <div class="form-container" id="login-form" style="display: none;">
+      <h2>Giriş Yap</h2>
+      <form id="loginForm">
+        <input type="email" id="login-email" placeholder="E-posta" required>
+        <input type="password" id="login-password" placeholder="Şifre" required>
+        <button type="submit">Giriş Yap</button>
+      </form>
+      <p>Hesabınız yok mu? <a href="#" id="show-register">Kayıt ol</a></p>
+    </div>
+
+
+    <div id="offer" >
+
+<div class="fiyat">
+    <div class="plan">
+      <h2>Kurslar</h2>
+      <div class="price">999 TL / Ay</div>
+      <ul>
+        <li>Gerçek hayat konuşmaları</li>
+        <li>Yeni başlayanlar için ideal</li>
+        <li>18 yaş ve üstü yetişkinler için</li>
+        
+      </ul>
+    <button class="btn" onclick="addToCart('Kurslar', '999 TL')">Seç</button>
+
+    </div>
+<div class="plan">
+      <h2>Özel+</h2>
+      <div class="price">3.999 TL / Ay</div>
+      <ul>
+        <li>Özel derslere erişim</li>
+        <li>Ders dışında ekstra pratik</li>
+        <li>Kapsamlı içerik</li>
+       
+      </ul>
+      <button class="btn yellow" onclick="addToCart('Özel+', '3.999 TL')">Seç</button>
+
+    </div>
+
+    <div class="plan">
+      <h2>Çocuklar</h2>
+      <div class="price">1.999 TL / Ay</div>
+      <ul>
+        <li>18 yaş altındaki çocuklar için</li>
+        <li>Eğlenceli oyunlar ve aktiviteler</li>
+        <li>Uzman eğitmenler</li>
+      </ul>
+   
+<button class="btn" onclick="addToCart('Çocuklar', '1.999 TL')">Seç</button>
+    </div>
+  </div>
+
+    <!-- Hakkımızda -->
+    <div class="hakkımızda">
+<div id="about"> 
+  <br>
+  <br>
+ <h2>HAKKIMIZDA</h2> 
+ <br>
+ <p>
+
+Learn english yabancı dil kursu’, Yabancı Dil Eğitiminde Modern Bilimsel Yöntemler ve Bilişim teknolojileri kullanarak, elde ettiği köklü bilgi birikimini sürekli yenileyen çağdaş bir eğitim hizmeti veren kurumdur.
+Özel learn english yabancı dil kursu’ Başlangıç Seviyesi İngilizce, Orta Seviyesi İngilizcesi, İş İngilizcesi ve Özel dersler ile ilgili hizmet vermektedir.
+
+<br>
+<h4>EĞİTİM KADROMUZ</h4>
+Türkiye’nin önde gelen üniversitelerinden mezun ve alanlarında uzmanlaşmış Türk ve Yabancı eğitmenlerden ve yine Türkiye’nin önde gelen üniversitelerinden mezun kendi bünyemizde yetiştirdiğimiz öğretmenlerimizden oluşmaktadır.
+Eğitmenlerimiz İngilizce öğretmenliği alanında edindikleri deneyimi eğitim teknolojileriyle bütünleştiren tecrübeli bir ekipten oluşmaktadır.
+<br>
+<h4>VİZYONUMUZ</h4>
+Türkiye’nin önde gelen üniversitelerinden mezun ve alanlarında uzmanlaşmış Türk ve Yabancı eğitmenlerden ve yine Türkiye’nin önde gelen üniversitelerinden mezun kendi bünyemizde 
+yetiştirdiğimiz öğretmenlerimizden oluşmaktadır.
+Eğitmenlerimiz İngilizce öğretmenliği alanında edindikleri deneyimleri, bilimsel yöntemler ve teknolojik gelişmelerle bütünleştiren tecrübeli bir ekipten oluşmaktadır.
+<br>
+<h4>MİSYONUMUZ</h4>
+Özel learn english yabancı dil kursu’ nun vizyonu, alanında uzman ve deneyimli eğitim kadrosuyla, gelişen ve yenilenen teknolojiyi takip ederek, birçok farlı dil öğretim yöntemlerinden yararlanarak, 
+öğrenci memnuniyeti yüksek, lider bir eğitim kurumu olarak devam etmektir.
+</p>
+<br>
+<br>
+</div>
+</div>
+
+   <div id="communication"> 
+    <h2>İLETİŞİM</h2>
+
+ <div class="contact-wrapper">
+      
+      <div class="contact-info">
+
+
+        <h4>Bize Ulaşın</h4>
+        <p><strong>Adres:</strong> İstanbul, Türkiye</p>
+        <p><strong>Telefon:</strong>  <a href="tel:+905435369545">
+          +90 543 536 95 45</a> </p>
+       <p><strong>Email:</strong> 
+      <a href="mailto:learnenglish@gmail.com">learnenglish@gmail.com</a>
+    </p>
+     <p>
+      <a 
+        href="https://api.whatsapp.com/send?phone=905435369545&text=Merhaba, Learn English kursu hakkında bilgi almak istiyorum." 
+        target="_blank"
+        style="display:inline-block; background-color:#25D366; color:white; padding:10px 15px; border-radius:6px; text-decoration:none; font-weight:bold;">
+        WhatsApp'tan Yaz
+      </a>
+    </p>
+  </div>
+      </div>
+     </div>
+     
+        <footer>
+    <p>&copy; 2025 Language Hub. All rights reserved.</p>
+    <div class="contact-section" id="contact">
+  </footer>
+</article>
+  </main>
+
+  <!-- JavaScript -->
+ <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA26XLG7jdLhyZ6HyzhuapXON-kCn0jNd4",
+      authDomain: "learnenglish-b0777.firebaseapp.com",
+      projectId: "learnenglish-b0777",
+      storageBucket: "learnenglish-b0777.appspot.com",
+      messagingSenderId: "547469954131",
+      appId: "1:547469954131:web:1869e9a6c702bffad04aa6",
+      measurementId: "G-6F3C3SXK32"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Formlar arası geçiş
+    document.getElementById("show-login").addEventListener("click", () => {
+      document.getElementById("register-form").style.display = "none";
+      document.getElementById("login-form").style.display = "block";
+    });
+
+    document.getElementById("show-register").addEventListener("click", () => {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("register-form").style.display = "block";
+    });
+
+    // Kayıt Formu 
+    document.getElementById("registerForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fullname = document.getElementById("fullname").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const telefon = document.getElementById("telefon").value.trim();
+      const password = document.getElementById("password").value;
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        await setDoc(doc(db, "users", user.uid), {
+          ad: fullname.split(" ")[0] || fullname,
+          soyad: fullname.split(" ")[1] || "",
+          email: email,
+          telefon: telefon
+        });
+
+        alert("Kayıt başarılı! Giriş yapabilirsiniz.");
+        document.getElementById("register-form").style.display = "none";
+        document.getElementById("login-form").style.display = "block";
+      } catch (error) {
+        alert("Kayıt hatası: " + error.message);
+      }
+    });
+
+    // Giriş Formu 
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("login-email").value.trim();
+      const password = document.getElementById("login-password").value;
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        alert("Giriş başarılı. Admin sayfasına yönlendiriliyorsun.!");
+        window.location.href = "admin.html"; 
+      } catch (error) {
+        alert("Giriş hatası: " + error.message);
+      }
+    });
+
+
+
+
+  document.getElementById('show-login').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('register-form').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
+  });
+
+  document.getElementById('show-register').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('register-form').style.display = 'block';
+  });
+  </script>
+<script>
+
+   
+    
+/* sepet */
+function addToCart(planName, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({ planName, price });
+  localStorage.setItem("cart", JSON.stringify(cart));  
+  document.getElementById("cart-count").textContent = cart.length;
+  alert(planName + " paketi sepete eklendi!");
+
+
+}
+
+
+function showCart() {
+  if (cart.length === 0) {
+    alert("Sepetiniz boş.");
+    return;
+  }
+
+  document.getElementById("cart-modal").style.display = "block";
+  updateCartList();
+}
+
+// Sepet listesini güncelleme
+function updateCartList() {
+  const list = document.getElementById("cart-list");
+  list.innerHTML = ""; 
+
+  cart.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.planName} - ${item.price} `;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Sil";
+    removeBtn.style.marginLeft = "10px";
+    removeBtn.onclick = () => {
+      removeFromCart(index);
+    };
+
+    li.appendChild(removeBtn);
+    list.appendChild(li);
+  });
+}
+
+// Sepetten ürün silme
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  document.getElementById("cart-count").textContent = cart.length;
+  updateCartList();
+
+  if (cart.length === 0) {
+    closeCart();
+    alert("Sepetiniz boşaldı.");
+  }
+}
+
+
+function closeCart() {
+  document.getElementById("cart-modal").style.display = "none";
+}
+
+function showCart() {
+  window.open("sepet.html", "_blank"); // başka sekmede açma
+}
+
+ 
+window.onload = function() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cart-count").textContent = cart.length;
+};
+
+
+
+</script>
+
+
+</body>
+</html>

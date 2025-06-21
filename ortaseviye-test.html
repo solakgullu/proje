@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>B1 & B2 English Tests</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 900px; margin: auto; background: #f9f9f9; }
+    h2 { text-align: center; }
+    .test-container { background: white; border-radius: 8px; padding: 20px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+    fieldset { margin-bottom: 15px; }
+    legend { font-weight: bold; margin-bottom: 6px; }
+    label { display: block; margin: 5px 0; cursor: pointer; }
+    button { padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; border-radius: 5px; background-color: #007BFF; color: white; }
+    button:hover { background-color: #0056b3; }
+    #result { margin-top: 20px; font-weight: bold; white-space: pre-wrap; }
+    .tabs { text-align: center; margin-bottom: 20px; }
+    .tab-btn {
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #ddd;
+      font-weight: bold;
+      user-select: none;
+    }
+    .tab-btn.active {
+      background-color: #007BFF;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>İngilizce Testleri</h2>
+
+  <div class="tabs">
+    <span class="tab-btn active" id="btnB1">B1 Test</span>
+    <span class="tab-btn" id="btnB2">B2 Test</span>
+  </div>
+
+  <!-- B1 Test -->
+  <div class="test-container" id="testB1">
+    <form id="formB1">
+      <fieldset>
+        <legend>1. I _____ to the store yesterday.</legend>
+        <label><input type="radio" name="q1" value="a"> A) go</label>
+        <label><input type="radio" name="q1" value="b"> B) went</label>
+        <label><input type="radio" name="q1" value="c"> C) gone</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. She usually _____ her homework after school.</legend>
+        <label><input type="radio" name="q2" value="a"> A) do</label>
+        <label><input type="radio" name="q2" value="b"> B) does</label>
+        <label><input type="radio" name="q2" value="c"> C) did</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. They have been _____ since morning.</legend>
+        <label><input type="radio" name="q3" value="a"> A) work</label>
+        <label><input type="radio" name="q3" value="b"> B) working</label>
+        <label><input type="radio" name="q3" value="c"> C) worked</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. We _____ dinner when the phone rang.</legend>
+        <label><input type="radio" name="q4" value="a"> A) have</label>
+        <label><input type="radio" name="q4" value="b"> B) were having</label>
+        <label><input type="radio" name="q4" value="c"> C) had</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. If I _____ you, I would take the offer.</legend>
+        <label><input type="radio" name="q5" value="a"> A) am</label>
+        <label><input type="radio" name="q5" value="b"> B) were</label>
+        <label><input type="radio" name="q5" value="c"> C) was</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. He _____ to work every day by bus.</legend>
+        <label><input type="radio" name="q6" value="a"> A) goes</label>
+        <label><input type="radio" name="q6" value="b"> B) go</label>
+        <label><input type="radio" name="q6" value="c"> C) going</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>7. They _____ a new house last year.</legend>
+        <label><input type="radio" name="q7" value="a"> A) bought</label>
+        <label><input type="radio" name="q7" value="b"> B) buy</label>
+        <label><input type="radio" name="q7" value="c"> C) buying</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>8. What time _____ the train leave?</legend>
+        <label><input type="radio" name="q8" value="a"> A) do</label>
+        <label><input type="radio" name="q8" value="b"> B) does</label>
+        <label><input type="radio" name="q8" value="c"> C) did</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>9. I _____ never seen such a beautiful sunset.</legend>
+        <label><input type="radio" name="q9" value="a"> A) have</label>
+        <label><input type="radio" name="q9" value="b"> B) has</label>
+        <label><input type="radio" name="q9" value="c"> C) had</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>10. She _____ to play the piano when she was a child.</legend>
+        <label><input type="radio" name="q10" value="a"> A) learned</label>
+        <label><input type="radio" name="q10" value="b"> B) learn</label>
+        <label><input type="radio" name="q10" value="c"> C) learning</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>11. We _____ in London since 2010.</legend>
+        <label><input type="radio" name="q11" value="a"> A) have lived</label>
+        <label><input type="radio" name="q11" value="b"> B) lived</label>
+        <label><input type="radio" name="q11" value="c"> C) living</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>12. I _____ to the gym twice a week.</legend>
+        <label><input type="radio" name="q12" value="a"> A) go</label>
+        <label><input type="radio" name="q12" value="b"> B) goes</label>
+        <label><input type="radio" name="q12" value="c"> C) going</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>13. The movie was _____ interesting.</legend>
+        <label><input type="radio" name="q13" value="a"> A) very</label>
+        <label><input type="radio" name="q13" value="b"> B) much</label>
+        <label><input type="radio" name="q13" value="c"> C) many</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>14. I _____ my homework before dinner.</legend>
+        <label><input type="radio" name="q14" value="a"> A) finished</label>
+        <label><input type="radio" name="q14" value="b"> B) finish</label>
+        <label><input type="radio" name="q14" value="c"> C) finishing</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>15. They _____ to the party last weekend.</legend>
+        <label><input type="radio" name="q15" value="a"> A) went</label>
+        <label><input type="radio" name="q15" value="b"> B) go</label>
+        <label><input type="radio" name="q15" value="c"> C) gone</label>
+      </fieldset>
+
+      <button type="button" onclick="checkAnswers('B1')">Sonuçları Gör (B1)</button>
+    </form>
+    <div id="resultB1"></div>
+  </div>
+
+  <!-- B2 Test -->
+  <div class="test-container" id="testB2" style="display:none;">
+    <form id="formB2">
+      <fieldset>
+        <legend>1. Despite _____ tired, she continued working.</legend>
+        <label><input type="radio" name="q1" value="a"> A) feeling</label>
+        <label><input type="radio" name="q1" value="b"> B) feel</label>
+        <label><input type="radio" name="q1" value="c"> C) felt</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. If I _____ you, I would accept the invitation.</legend>
+        <label><input type="radio" name="q2" value="a"> A) were</label>
+        <label><input type="radio" name="q2" value="b"> B) am</label>
+        <label><input type="radio" name="q2" value="c"> C) was</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. She suggested _____ earlier to avoid traffic.</legend>
+        <label><input type="radio" name="q3" value="a"> A) leaving</label>
+        <label><input type="radio" name="q3" value="b"> B) leave</label>
+        <label><input type="radio" name="q3" value="c"> C) left</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. They _____ to finish the project by Friday.</legend>
+        <label><input type="radio" name="q4" value="a"> A) plan</label>
+        <label><input type="radio" name="q4" value="b"> B) plans</label>
+        <label><input type="radio" name="q4" value="c"> C) planned</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. By this time next year, I _____ graduated.</legend>
+        <label><input type="radio" name="q5" value="a"> A) will have</label>
+        <label><input type="radio" name="q5" value="b"> B) have</label>
+        <label><input type="radio" name="q5" value="c"> C) will</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. He has been working here _____ 2015.</legend>
+        <label><input type="radio" name="q6" value="a"> A) since</label>
+        <label><input type="radio" name="q6" value="b"> B) for</label>
+        <label><input type="radio" name="q6" value="c"> C) from</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>7. The book _____ by a famous author.</legend>
+        <label><input type="radio" name="q7" value="a"> A) was written</label>
+        <label><input type="radio" name="q7" value="b"> B) wrote</label>
+        <label><input type="radio" name="q7" value="c"> C) written</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>8. I wish I _____ more time to travel.</legend>
+        <label><input type="radio" name="q8" value="a"> A) have</label>
+        <label><input type="radio" name="q8" value="b"> B) had</label>
+        <label><input type="radio" name="q8" value="c"> C) will have</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>9. They _____ going to the party tonight.</legend>
+        <label><input type="radio" name="q9" value="a"> A) are</label>
+        <label><input type="radio" name="q9" value="b"> B) is</label>
+        <label><input type="radio" name="q9" value="c"> C) was</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>10. We _____ never seen such a movie before.</legend>
+        <label><input type="radio" name="q10" value="a"> A) have</label>
+        <label><input type="radio" name="q10" value="b"> B) has</label>
+        <label><input type="radio" name="q10" value="c"> C) had</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>11. If he _____ earlier, he wouldn’t have missed the train.</legend>
+        <label><input type="radio" name="q11" value="a"> A) had left</label>
+        <label><input type="radio" name="q11" value="b"> B) has left</label>
+        <label><input type="radio" name="q11" value="c"> C) left</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>12. This time next week, I _____ on vacation.</legend>
+        <label><input type="radio" name="q12" value="a"> A) will be</label>
+        <label><input type="radio" name="q12" value="b"> B) am</label>
+        <label><input type="radio" name="q12" value="c"> C) was</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>13. She _____ to improve her English skills.</legend>
+        <label><input type="radio" name="q13" value="a"> A) tries</label>
+        <label><input type="radio" name="q13" value="b"> B) try</label>
+        <label><input type="radio" name="q13" value="c"> C) trying</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>14. We _____ already finished our homework.</legend>
+        <label><input type="radio" name="q14" value="a"> A) have</label>
+        <label><input type="radio" name="q14" value="b"> B) has</label>
+        <label><input type="radio" name="q14" value="c"> C) had</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>15. They _____ gone to the store before it started raining.</legend>
+        <label><input type="radio" name="q15" value="a"> A) had</label>
+        <label><input type="radio" name="q15" value="b"> B) has</label>
+        <label><input type="radio" name="q15" value="c"> C) have</label>
+      </fieldset>
+
+      <button type="button" onclick="checkAnswers('B2')">Sonuçları Gör (B2)</button>
+    </form>
+    <div id="resultB2"></div>
+  </div>
+<br>
+  <a href="index.html" > Anasayfaya dön</a>
+  <script>
+    // Tab switcher
+    const btnB1 = document.getElementById('btnB1');
+    const btnB2 = document.getElementById('btnB2');
+    const testB1 = document.getElementById('testB1');
+    const testB2 = document.getElementById('testB2');
+    const resultB1 = document.getElementById('resultB1');
+    const resultB2 = document.getElementById('resultB2');
+
+    btnB1.onclick = () => {
+      testB1.style.display = 'block';
+      testB2.style.display = 'none';
+      btnB1.classList.add('active');
+      btnB2.classList.remove('active');
+      resultB1.innerHTML = '';
+      resultB2.innerHTML = '';
+    };
+
+    btnB2.onclick = () => {
+      testB1.style.display = 'none';
+      testB2.style.display = 'block';
+      btnB2.classList.add('active');
+      btnB1.classList.remove('active');
+      resultB1.innerHTML = '';
+      resultB2.innerHTML = '';
+    };
+
+    function checkAnswers(level) {
+      let correctAnswers, total, form, resultDiv;
+      if(level === 'B1') {
+        correctAnswers = {
+          q1: 'b', q2: 'b', q3: 'b', q4: 'b', q5: 'b',
+          q6: 'a', q7: 'a', q8: 'a', q9: 'a', q10: 'a',
+          q11: 'a', q12: 'a', q13: 'a', q14: 'a', q15: 'a'
+        };
+        form = document.getElementById('formB1');
+        resultDiv = resultB1;
+      } else if(level === 'B2') {
+        correctAnswers = {
+          q1: 'a', q2: 'a', q3: 'a', q4: 'a', q5: 'a',
+          q6: 'a', q7: 'a', q8: 'b', q9: 'a', q10: 'a',
+          q11: 'a', q12: 'a', q13: 'a', q14: 'a', q15: 'a'
+        };
+        form = document.getElementById('formB2');
+        resultDiv = resultB2;
+      } else {
+        return;
+      }
+
+      total = Object.keys(correctAnswers).length;
+      let score = 0;
+      let details = '';
+
+      for (let q in correctAnswers) {
+        const selected = form.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === correctAnswers[q]) {
+          score++;
+          details += `<p><strong>${q}.</strong> Doğru ✔️</p>`;
+        } else {
+          const correctOption = form.querySelector(`input[name="${q}"][value="${correctAnswers[q]}"]`);
+          const correctLabel = correctOption ? correctOption.parentElement.textContent.trim() : 'Bilinmiyor';
+          details += `<p><strong>${q}.</strong> Yanlış ❌ - Doğru cevap: <em>${correctLabel}</em></p>`;
+        }
+      }
+
+      let message = `<p>Doğru cevap sayısı: ${score} / ${total}</p>`;
+   
+
+      resultDiv.innerHTML = message + '<hr>' + details;
+    }
+  </script>
+</body>
+</html>
